@@ -125,5 +125,6 @@ buildNumber.properties
 
 .gitignore
 .idea/
-com/
+
 /venv/
+com/
