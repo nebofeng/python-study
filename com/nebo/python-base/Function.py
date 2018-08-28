@@ -30,3 +30,37 @@ def changeme( mylist ):
 mylist = [10,20,30];
 changeme( mylist );
 print "函数外取值: ", mylist
+
+
+#参数  ： 必备参数 ， 关键字参数 ， 默认参数 ， 不定长 参数
+
+
+#必备参数， 需要传递参数进去函数
+
+
+# 关键字参数 。传递参数的时候 。形如 ： str=""  参数名，参数值一起传入 。
+printme( parameters ="sss") #如果是多个参数。顺序可以随意
+#缺省参数 （默认参数）没传递age的时候有默认值
+def function(name,age=35):
+    print name,age
+
+    return;
+
+# 不定长参数 加了 *的变量名字会存放所有未命名的变量参数
+def printinfo( arg1, *vartuple ):
+    "打印任何传入的参数"
+    print "输出: "
+    print arg1
+    for var in vartuple:
+        print var
+    return;
+
+
+
+
+
+
+
+
+
+
