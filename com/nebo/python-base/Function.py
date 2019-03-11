@@ -1,7 +1,7 @@
 #coding=utf-8
 def printme(parameters ):
     "打印传递进函数的字符串"
-    print  parameters
+    print(parameters)
     return
 
 printme("Hello Python !")
