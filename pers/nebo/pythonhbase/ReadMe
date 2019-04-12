@@ -1,0 +1,5 @@
+#内网环境先下载setuptools 安装
+再下载pip 安装
+#安装 thrift 、hbase 依赖
+pip install thrift
+pip install hbase-thrift
