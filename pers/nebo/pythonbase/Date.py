@@ -18,6 +18,11 @@ print(localTime)
 # print time.mktime(time.strptime(a,"%a %b %d %H:%M:%S %Y"))
 now_time= time.strftime("%Y%m%d%H%M%S", time.localtime())
 end_time= time.strftime("%Y%m%d%H%M%S", time.localtime())
-while(int(end_time)-int(now_time)<60):
-    print("==========")
-    end_time= time.strftime("%Y%m%d%H%M%S", time.localtime())
+# while(int(end_time)-int(now_time)<60):
+#     print("==========")
+#     end_time= time.strftime("%Y%m%d%H%M%S", time.localtime())
+for i in range(1,100):
+    print("===i %s"%i)
+
+
+
