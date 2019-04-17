@@ -19,7 +19,7 @@ import time
 import paramiko
 import os
 import random
-
+import commands
 
 def getSsh(hostname,usename,password):
     ssh = paramiko.SSHClient()
@@ -50,7 +50,8 @@ def kill_process_by_name(name):
     return
 
 def  localCmd(cmd):
-    stdin, stdout, stderr = os.open(cmd)
+    stdin, stdout, stderr = os.popen(cmd)
+    os.popen(cmd)
     result = stdout.read()
     if not result:
         result = stderr.read()  # 读取错误信息
@@ -80,7 +81,6 @@ def  checkStatus():
     #本节点执行 查询状态
     node1_status = localCmd(rm1status_cmd)
     node3_status = localCmd(rm1status_cmd)
-
     flag = True
     if node1_status == "active":
         dict['node1'] = "acvite"
@@ -113,9 +113,7 @@ def  checkStatus():
         else:
             print(now_time,"node1 stop node2 stop: Error")
             flag = False
-
     return  dict,flag
-
 
 #开启服务
 def start():
@@ -130,35 +128,36 @@ def stop(node,service):
     cmd_kill="kill -9 %s" %pid
     node.exec_command(cmd_kill)
     return
-    return
 
 if __name__ == "__main__":
-
     node1=getSsh("","","")
     node3=getSsh("","","")
     stopInfo="Connection refused"
     #
     dict = {'node1': ' ', 'node3': ' '}
-
     dict,flag=checkStatus()
     while(flag):
         #关闭
+
+        #随机休眠
         sleeptime = random.randint(0, 300)
         time.sleep(sleeptime)
         if dict['node1']=="active":
             if dict['node3']=="standby":
                 print("这里关闭node1")
                 stop(node1,"ResourceManager")
-                node1.exec_command()
+                #node1.exec_command()
             elif dict['node3']=="stop":
-                print("这里开启 node3")
-
+                print("这里等待 node3重启")
+                dict,flag=checkStatus()
                 node3.exec_command("")
         elif dict['node1']=='standby':
                 print("这里关闭node3")
                 stop(node3,"ResourceManager")
+                dict, flag = checkStatus()
+
         else:
-            print("这里开启node1")
+            print("这里等待node1重启")
 
 
 
