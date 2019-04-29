@@ -11,6 +11,8 @@ def getYesterday():
     yesterday = today - oneday
     return yesterday
 
-
+def getYesterday2():
+    yesterday = datetime.date.today() + datetime.timedelta(-1)
+    return yesterday
 # 输出
 print(getYesterday())
