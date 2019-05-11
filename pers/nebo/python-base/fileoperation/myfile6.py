@@ -1,5 +1,5 @@
 from time import sleep
-myfile = open(r'C:\Users\Administrator\Desktop\1.txt','w')#默认的打开权限就是r
+myfile = open(r'C:\Users\nebo\Desktop\1.txt','w')#默认的打开权限就是r
 #read->r
 #write->w
 #binary->b

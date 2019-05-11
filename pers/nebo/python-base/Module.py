@@ -25,7 +25,7 @@ import math
 
 content = dir(math)
 
-print content;
+print(content);
 
 #输出的  特殊字符串变量__name__指向模块的名字，__file__指向该模块的导入文件名。
 
