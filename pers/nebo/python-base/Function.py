@@ -72,5 +72,26 @@ print('函数外部的a是:',a)
 
 
 
+import copy
+mylist = [1,2,3]
+def func3(obj):
+    obj = ['a','b','c']
+    print('inside a is:',obj)
+def func2(obj):
+    obj = copy.deepcopy(obj)
+    obj = ['a','b','c']
+    #我们把这个列表 深拷贝给了 obj
+    print('inside a is:',obj)
+
+func3(mylist)#传参
+print('外部的a修改完成后是:',mylist)
+print('------------------')
+mylist = [1,2,3]
+func2(mylist)#传参
+print('外部的a修改完成后是:',mylist)
+
+
+
+
 
 
