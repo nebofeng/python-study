@@ -16,8 +16,15 @@ result = 0
 while True:
 	mystr = input('请输入你要做的操作:')
 	mystr_set = set(mystr.strip())
+
+	print(mystr.strip())
+	print(mystr_set)
+	print(set("1+3".strip()))
+	print(set("1+4"))
+	print(set("abb"))
 	#去掉空格 变成集合
 	oper = (mystr_set&oper_set).pop()
+	print(oper)
 	#取出运算符
 	num1 = int(mystr.split(oper)[0])
 	num2 = int(mystr.split(oper)[1])

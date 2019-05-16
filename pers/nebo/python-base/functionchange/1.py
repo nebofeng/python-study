@@ -3,6 +3,7 @@ def func(num):
     num = 2#修改 赋值
     print('inside a is:',num)
 def func1(num):
+
     num += 1#修改 加等于
     #针对与不可变数据对象 num += 1 == num = num + 1
     print('inside a is:',num)
