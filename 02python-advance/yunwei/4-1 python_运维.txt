@@ -1,0 +1,51 @@
+实在项目：
+               Python 运维监控脚本编写
+项目描述：
+               利用Python实现服务器自动监控本地配置文件的功能，并把监控到的数据发送到指定的服务器上，并且进行简单的数据整理
+涉及知识点：
+   1、Python 基本语法
+   2、Python流程控制
+   3、Python函数式编程
+   4、Python os、sys模块
+   5、Python socket
+   6、Python select
+   7、Python file
+   8、Python ConfigParser
+项目结构：
+           client:
+		#面向对象
+client.py
+settings.py
+client_cfg.cfg
+              server:
+		#server 端 select socket			
+server.py
+settings.py
+server_cfg.cfg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
