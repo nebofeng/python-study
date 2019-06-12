@@ -28,3 +28,4 @@ print reduce(lambda x,y:x+y, range(101))
 #结果：5050
 print reduce(lambda x,y:x+y, range(101),100)
 #结果：5150
+print (reduce(lambda x,y:x*y,range(1,10,1)))
