@@ -17,8 +17,8 @@ while True:
         print(recv_data)
         if recv_data == "break":
             break
-        send_data = raw_input(">>>")
-        con.send(send_data)
+        send_data = input(">>>")
+        con.send(send_data.encode())
         if send_data == "break":
             break
     if send_data == "break":
