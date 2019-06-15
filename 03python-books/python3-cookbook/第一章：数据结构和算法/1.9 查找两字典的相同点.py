@@ -40,7 +40,9 @@ c = {key:a[key] for key in a.keys() - {'z', 'w'}}
 '''
 
 c = {key for key in a.keys() if key not in {'z', 'w'}}
-print (c)
+for i in c:
+    print (i)
+
 # c is {'x': 1, 'y': 2}
 '''
 一个字典就是一个键集合与值集合的映射关系。 字典的 keys() 方法返回一个展现键集合的键视图对象。 
