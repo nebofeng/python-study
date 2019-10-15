@@ -15,4 +15,5 @@ def test_s3(login):
     print("用例3：登录之后其它动作333")
 
 if __name__ == "__main__":
-    pytest.main(["-s", "test_fixture.py"])
+
+    pytest.main(["-s", "test_fixture.py::test_s3::test_s2"])
