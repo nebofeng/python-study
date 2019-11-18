@@ -24,6 +24,23 @@ AUTH=(user,passwd)
    右键 选择 copy as curl （bash）
    
  将这些参数封装起来（有部分不是非必要参数，不必填写）
+以启动为例：
+
+#启动
+curl 'http://xxxx:8080/api/v1/clusters/fnbfive/hosts/node5/host_components?' 
+-X PUT
+-H 'Cookie: td_cookie=1522585746; AMBARISESSIONID=node0192ci3b9qc4is437ys7sm76zw273.node0' 
+-H 'Origin: http://xxxxx:8080'
+-H 'Accept-Encoding: gzip, deflate' 
+-H 'Accept-Language: zh-CN,zh;q=0.9' 
+-H 'X-Requested-By: X-Requested-By' 
+-H 'User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36' 
+-H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' 
+-H 'Accept: application/json, text/javascript, */*; q=0.01' 
+-H 'Referer: http://xxxxx:8080/' 
+-H 'X-Requested-With: XMLHttpRequest' 
+-H 'Connection: keep-alive' 
+--data $'{"RequestInfo":{"context":"\u542f\u52a8\u6240\u6709\u4e3b\u673a\u7ec4\u4ef6","operation_level":{"level":"HOST","cluster_name":"fnbfive","host_names":"node5"},"query":"HostRoles/component_name.in(GRAFANA,KAFKA_BROKER,METRICS_MONITOR,SUPERSET)"},"Body":{"HostRoles":{"state":"STARTED"}}}' --compressed
 
 '''
 def startComponents(host,component):
